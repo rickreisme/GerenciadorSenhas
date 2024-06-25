@@ -74,7 +74,7 @@ const NotasPage = () => {
             const response = await axios.delete(`http://127.0.0.1:8000/users/${idUsuario}/note/${currentId3}/`);
 
             if (response.status === 200) {
-                toast.success('Senha deletada com sucesso!');
+                toast.success('Nota deletada com sucesso!');
                 setNotas(notas.filter(nota => nota.id !== currentId3));
                 handleModal7Close();
             }
