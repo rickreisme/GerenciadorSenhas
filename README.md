@@ -16,6 +16,7 @@ Nosso projeto utiliza tecnologias de ponta para garantir a melhor experiência e
 
 - **Back-End:** Desenvolvido em Python, garantindo uma base sólida e segura.
 - **Front-End:** Construído com Vite e React, proporcionando uma interface rápida e responsiva.
+- **Outras tecnologias/ferramentas utilizadas:** Docker, SASS, Flask, PostgreSQL
 
 ## Nossa Equipe
 
