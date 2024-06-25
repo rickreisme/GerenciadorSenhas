@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:latest
+    volumes: 
+      - ./criacao_banco.sql:/docker-entrypoint-initdb.d/criacao_banco.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    expose:
+      - "54320"
+    ports:
+      - "54320:5432"

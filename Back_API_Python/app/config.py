@@ -1,0 +1,9 @@
+bd_config = [
+    {
+        "database": "gerenciador_de_senhas",
+        "user": "postgres",
+        "password": "postgres",
+        "host": "localhost",
+        "port": "54320"
+    }
+]

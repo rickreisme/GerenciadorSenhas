@@ -1,0 +1,44 @@
+@import "./vars.scss";
+
+.sobre-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .sobre-intro {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: $azul-medio;
+    border-top: 2px solid;
+    height: 65px;
+    gap: 10px;
+    padding-left: 20px;
+
+    .btn-back {
+      display: flex;
+
+      .icon-back {
+        display: flex;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .sobre {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    padding: 0 20px;
+    text-align: center;
+
+    h1{
+        text-align: center;
+        color: $azul-claro;
+    }
+
+    .sobre-equipe img{
+        width: 30%;
+    }
+  }
+}

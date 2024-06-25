@@ -1,0 +1,98 @@
+@import "./vars.scss";
+
+.config-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .config-intro {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: $azul-medio;
+    border-top: 2px solid;
+    height: 65px;
+    gap: 10px;
+    padding-left: 20px;
+
+    .btn-back {
+      display: flex;
+
+      .icon-back {
+        display: flex;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .config-opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+
+    .config-opcao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $azul-principal;
+      font-size: 1.3em;
+      height: 100px;
+      width: 15%;
+      border-radius: 15px;
+      transition: 0.3s ease-in-out;
+
+      .config-icons{
+        font-size: 2rem;
+        margin-right: 5px;
+      }
+    }
+    .config-opcao:hover {
+      background-color: $azul-medio;
+    }
+
+    .btn-nao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease-in-out;
+      background-color: $vermelho-principal;
+      padding: 0 5px;
+      width: 50%;
+      border-radius: 20px;
+      gap: 3px;
+
+      .icon-trash {
+        font-size: 1.3rem;
+      }
+    }
+    .btn-nao:hover {
+      background-color: $vermelho-claro;
+    }
+  }
+
+  .config-save{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .save-config {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $verde-principal;
+        font-size: 1.3em;
+        height: 40px;
+        width: 17%;
+        padding: 5px 0;
+        border-radius: 15px;
+        transition: 0.3s ease-in-out;
+      }
+      .save-config:hover {
+        background-color: $verde-claro;
+      }
+  }
+}

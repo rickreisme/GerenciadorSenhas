@@ -1,0 +1,40 @@
+@import "./vars.scss";
+
+.dados-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .dados-intro {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: $azul-medio;
+    border-top: 2px solid;
+    height: 65px;
+    gap: 10px;
+    padding-left: 20px;
+
+    .btn-back {
+      display: flex;
+
+      .icon-back {
+        display: flex;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .dados {
+    display: flex;
+    flex-direction: column;
+
+    .lista-dados{
+        margin-bottom: 20px;
+
+        span{
+            color: $azul-claro;
+        }
+    }
+  }
+}

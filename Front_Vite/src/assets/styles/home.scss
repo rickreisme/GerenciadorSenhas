@@ -1,0 +1,366 @@
+@import "./vars.scss";
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .home-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 65px;
+    background-color: $azul-medio;
+    border-top: 2px solid;
+
+    .btns-home-intro {
+      display: flex;
+      gap: 15px;
+      width: 30%;
+
+      .btn-criar-senha {
+        background-color: $verde-principal;
+        padding: 7px 0;
+        width: 60%;
+        height: 40px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+      }
+      .btn-criar-senha:hover {
+        background-color: $verde-claro;
+      }
+
+      .btn-favoritos {
+        color: black;
+        background-color: $amarelo-principal;
+        padding: 7px 0;
+        width: 45%;
+        height: 40px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+      }
+      .btn-favoritos:hover {
+        background-color: $amarelo-claro;
+      }
+
+      .btn-notas{
+        background-color: $azul-medio2;
+        padding: 7px 0;
+        width: 65%;
+        height: 40px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+      }
+      .btn-notas:hover{
+        background-color: $azul-claro;
+        color: black;
+      }
+
+      .btn-config{
+        padding: 0 7px;
+        width: 10%;
+        transition: 0.3s ease-in-out;
+
+        .icon-config{
+          display: flex;
+          font-size: 1.8rem;
+        }
+      }
+      .btn-config:hover{
+        color: $verde-claro;
+      }
+    }
+  }
+
+  .home-senhas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .senha-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 0 350px;
+      padding: 0 20px 20px;
+      align-items: center;
+      margin: 20px;
+      background-color: $azul-medio2;
+      border-radius: 20px;
+
+      span {
+        font-weight: bold;
+      }
+
+      .senhaOculta {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .senha-visible {
+          display: inline;
+        }
+
+        .senha-hidden {
+          display: none;
+        }
+
+        button {
+          display: flex;
+
+          .hidden-icon {
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .btns-senha-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .btn-editar-senha {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $verde-principal;
+          padding: 7px 7px;
+          width: 90%;
+          border-radius: 20px;
+          transition: 0.3s ease-in-out;
+
+          .icon-edit {
+            font-size: 1.3rem;
+          }
+        }
+        .btn-editar-senha:hover {
+          background-color: $verde-claro;
+        }
+
+        .btn-apagar-senha {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s ease-in-out;
+          background-color: $vermelho-principal;
+          padding: 0 5px;
+          width: 80%;
+          border-radius: 20px;
+          gap: 3px;
+
+          .icon-trash {
+            font-size: 1.3rem;
+          }
+        }
+        .btn-apagar-senha:hover {
+          background-color: $vermelho-claro;
+        }
+      }
+    }
+  }
+}
+
+.modalEditarSenha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  .editarSenha-modal-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-title-intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: $azul-medio2;
+      gap: 150px;
+      padding: 0 31.9px;
+      margin-bottom: 20px;
+
+      .modal-btn-close {
+        display: flex;
+        align-items: center;
+        background-color: $vermelho-principal;
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+
+        .modal-icon-close {
+          font-size: 1.7em;
+        }
+      }
+      .modal-btn-close:hover {
+        background-color: $vermelho-claro;
+      }
+    }
+  }
+
+  .dados-senha {
+    display: flex;
+    justify-content: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input::placeholder {
+      color: wheat;
+      padding-left: 5px;
+    }
+
+    input {
+      justify-content: center;
+      width: 370px;
+      height: 42px;
+      margin: 3px 0 15px 0;
+      border: solid 2px white;
+      border-radius: 15px;
+      font-size: 14px;
+      font-family: $font-principal;
+      background: transparent;
+      color: #fff;
+      font-weight: 400;
+      padding-left: 7px;
+      transition: 0.5s ease-in-out;
+    }
+
+    input:focus {
+      outline: none;
+      border: solid 2px $azul-claro;
+    }
+
+    .btn-call-cadastro {
+      transition: 0.3s ease-in-out;
+
+      span {
+        margin-left: 4px;
+      }
+    }
+    .btn-call-cadastro:hover {
+      color: $azul-claro;
+    }
+
+    .btn-editar-senha {
+      display: flex;
+      justify-content: center;
+      background-color: $verde-principal;
+      font-size: 1.2em;
+      width: 80%;
+      padding: 5px 0;
+      border-radius: 15px;
+      transition: 0.3s ease-in-out;
+    }
+    .btn-editar-senha:hover {
+      background-color: $verde-claro;
+    }
+
+    .btn-apagar-senha {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease-in-out;
+      background-color: $vermelho-principal;
+      padding: 0 5px;
+      width: 80%;
+      border-radius: 20px;
+      gap: 3px;
+
+      .icon-trash {
+        font-size: 1.3rem;
+      }
+    }
+    .btn-apagar-senha:hover {
+      background-color: $vermelho-claro;
+    }
+  }
+}
+
+.modalApagarSenha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  .apagarSenha-modal-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-title-intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      background-color: $azul-medio2;
+      gap: 150px;
+      padding: 0 47px;
+
+      .modal-btn-close {
+        display: flex;
+        align-items: center;
+        background-color: $vermelho-principal;
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+
+        .modal-icon-close {
+          font-size: 1.7em;
+        }
+      }
+      .modal-btn-close:hover {
+        background-color: $vermelho-claro;
+      }
+    }
+  }
+
+  .btns-apagar-senha {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+
+    .btn-editar-senha {
+      display: flex;
+      justify-content: center;
+      background-color: $verde-principal;
+      font-size: 1.2em;
+      width: 80%;
+      padding: 5px 0;
+      border-radius: 15px;
+      transition: 0.3s ease-in-out;
+    }
+    .btn-editar-senha:hover {
+      background-color: $verde-claro;
+    }
+
+    .btn-apagar-senha {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease-in-out;
+      background-color: $vermelho-principal;
+      padding: 0 5px;
+      width: 80%;
+      border-radius: 20px;
+      gap: 3px;
+
+      .icon-trash {
+        font-size: 1.3rem;
+      }
+    }
+    .btn-apagar-senha:hover {
+      background-color: $vermelho-claro;
+    }
+  }
+}

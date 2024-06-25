@@ -1,0 +1,19 @@
+@import "./vars.scss";
+
+.header-container {
+  display: flex;
+
+  .intro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    background-color: $azul-principal;
+    width: 100%;
+
+    h1 {
+      font-family: $font-titulo;
+      color: white;
+    }
+  }
+}
