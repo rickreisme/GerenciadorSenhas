@@ -9,13 +9,12 @@ const CadastroPage = () => {
     const [senha, setSenha] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    let idUsuario = document.cookie.split('=')[1];
-    console.log("idUsuario", idUsuario);
+ 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            let password = senha;
+            const password = senha;
             
             //console.table('nome', nome, 'email', email, 'password', password);
             const response = await axios.post('http://127.0.0.1:8000/users/', {
@@ -25,6 +24,10 @@ const CadastroPage = () => {
             });
 
             if (response.status === 201) {
+                const userId = response.data.id
+                sessionStorage.setItem('userId', userId)
+
+                console.log("Usuário criado com sucesso. ID:", userId);
                 navigate("/");
             }
         } catch (error) {

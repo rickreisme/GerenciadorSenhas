@@ -41,7 +41,7 @@ const NotasPage = () => {
         setIsModal7Open(false);
         setCurrentId3(null);
     };
-    let idUsuario = document.cookie.split('=')[1];
+    let idUsuario = sessionStorage.getItem('userId');
 
     const handleCriarNota = async (e) => {
         e.preventDefault();

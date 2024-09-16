@@ -7,7 +7,6 @@ import { IoMdSettings } from "react-icons/io";
 import { FaEyeSlash, FaEye, FaTrash, FaPencilAlt } from "react-icons/fa";
 import Modal from "react-modal";
 import { toast } from 'react-toastify';
-import { useParams } from 'react-router-dom';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -25,6 +24,8 @@ const HomePage = () => {
 
     const [errorMessage3, setErrorMessage3] = useState('');
 
+    axios.defaults.withCredentials = false;
+
     const handleModal3Open = (id) => {
         const senhaEditar = senhas.find(senha => senha.id === id);
 
@@ -38,7 +39,8 @@ const HomePage = () => {
             setIsModal3Open(true);
         }
     };
-    let idUsuario = document.cookie.split('=')[1];
+
+    let idUsuario = sessionStorage.getItem('userId');
     
     const handleModal3Close = () => {
         setIsModal3Open(false);

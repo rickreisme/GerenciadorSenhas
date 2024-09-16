@@ -19,8 +19,16 @@ def users():
         else:
             user = User(data['nome'], data['email'], data['password'])
             db.session.execute(text(f"INSERT INTO tb_users (username, email, password, create_at) VALUES ('{user.nome}', '{user.email}', '{user.senha}', NOW());"))
+
+            new_user_id_result = db.session.execute(text("SELECT  currval('users_serial');"))
+            new_user_id = new_user_id_result.scalar()
             db.session.commit()
-            return user.to_json(), 201
+            
+            return jsonify({
+                'id': new_user_id,
+                'nome': user.nome,
+                'email': user.email
+            }), 201
 
 @user_bp.route('/users/<int:user_id>', methods=['GET', 'POST'])
 def get_users(user_id):
@@ -36,8 +44,14 @@ def get_users(user_id):
             return jsonify({'message': 'Usuário não encontrado'}), 404
         else:
             if request.method == 'GET':
-                user = User(user[0][1], user[0][2], user[0][4])
-                return jsonify(user.to_json()), 200
+                user = user[0]
+                user_data = {
+                    'id': user[0],
+                    'nome': user[1],
+                    'email': user[2],
+                    'senha': user[3]
+                }
+                return jsonify(user_data), 200
             else:
                 data = request.get_json()
                 user = User(data['nome'], data['email'], data['password'])

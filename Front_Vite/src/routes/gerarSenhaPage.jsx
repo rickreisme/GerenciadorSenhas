@@ -27,6 +27,8 @@ const SenhaPage = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [errorMessage2, setErrorMessage2] = useState('');
 
+    axios.defaults.withCredentials = false;
+
     const handleModalOpen = () => {
         setIsModalOpen(true);
     }
@@ -43,7 +45,8 @@ const SenhaPage = () => {
         setIsModal2Open(false);
     }
 
-    let idUsuario = document.cookie.split('=')[1];
+    let idUsuario = sessionStorage.getItem('userId');
+    console.log(idUsuario);    
 
     const handleCriarSenha = async (e) => {
         e.preventDefault();

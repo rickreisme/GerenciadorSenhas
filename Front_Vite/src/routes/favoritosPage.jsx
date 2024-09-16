@@ -14,7 +14,7 @@ const FavoritosPage = () => {
     const [isModal5Open, setIsModal5Open] = useState(false);
     const [errorMessage4, setErrorMessage4] = useState('');
     const [currentId2, setCurrentId2] = useState(null);
-    let idUsuario = document.cookie.split('=')[1];
+    let idUsuario = sessionStorage.getItem('userId');
     useEffect(() => {
         const fetchFavoritos = async () => {
             try {
@@ -117,7 +117,7 @@ const FavoritosPage = () => {
                                         onClick={() => handleModal5Open(favorito.id)}
                                     >
                                         <FaTrash className='icon-trash' />
-                                        <p>Apagar favorito</p>
+                                        <p>Remover favorito</p>
                                     </button>
                                 </div>
                             </div>
